@@ -4,7 +4,7 @@ import Search from "./Search";
 import Settings from './Settings'
 function Header() {
   return (
-    <div className="Header">Header
+    <div className="Header">
     <Place />
     <Search />
     <Settings />

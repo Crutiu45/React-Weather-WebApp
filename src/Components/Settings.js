@@ -2,7 +2,7 @@ import '../styles/components/Settings.scss';
 
 function Settings() {
   return (
-    <div className='Settings'>Settings
+    <div className='Settings'>
       <div className="theme-toggler">
         <div className="theme-buttons">
           <div className="light-theme-btn">
