@@ -1,0 +1,1 @@
+import currentWeather from "./current-weather.json"
