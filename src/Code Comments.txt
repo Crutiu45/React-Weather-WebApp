@@ -1,3 +1,5 @@
 <b> is for boldness
 <i> is for icon
 '...-btn'; btn here is button
+index.js: " "current": " part in currentWeather json file
+index.js: export a func allows it to be used in other files or modules
