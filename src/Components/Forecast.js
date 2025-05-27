@@ -1,8 +1,25 @@
+import '../styles/components/Forecast.scss';
+import HourlyForecastWidget from './HourlyForecastWidget';
+import DailyForecastWidget from './DailyForecastWidget';
 
-
-function Forecast() {
+function Forecast({title, type, data}) {
   return (
-    <div>Forecast</div>
+    <div className="Forecast">
+        <div className="forecast-container">
+            <h3>{title}</h3>
+            <div className='widget-container'>
+                {data.map((singleData) => (
+                    <div>
+                        {type === "hourly" ? (
+                            <HourlyForecastWidget data={singleData}/>
+                        ) : (
+                            <DailyForecastWidget data={singleData}/>
+                        )}
+                    </div>
+                ))}
+            </div>
+        </div>
+    </div>
   )
 }
 
