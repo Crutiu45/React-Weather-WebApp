@@ -3,3 +3,9 @@
 '...-btn'; btn here is button
 index.js: " "current": " part in currentWeather json file
 index.js: export a func allows it to be used in other files or modules
+CurrentWeather.js: 
+const data = getCurrentWeather();
+  const {
+    cloud_cover, feels_like, humidity, icon_num, precipitation, summary, temperature, uv_index, visibility, wind,
+  } = data; 
+  Explanantion -----> pulls certain properties into their own variables from the data object
