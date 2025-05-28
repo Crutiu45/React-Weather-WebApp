@@ -30,7 +30,7 @@ function HourlyForecastWidget({data}) {
     }).format(new Date(date).setMinutes(0)),
   };
 
-  weather_date.day = weather_date.day === now_date.day && weather_date.time === now_date.time ? "Today" : weather_date.time === "00:00" ? weather_date.day: '';
+  weather_date.day = weather_date.day === now_date.day && weather_date.time === now_date.time ? "Now" : weather_date.time === "00:00" ? weather_date.day: '';
 
   return (
     <div className="widget">
@@ -40,8 +40,8 @@ function HourlyForecastWidget({data}) {
         <div className="icon">
           <WeatherIcon iconNumber={icon} summary={summary}/>
         </div>
-        <div 
-          className="temperature">{Math.round(temperature)} °C
+        <div className="temperature">
+          {Math.round(temperature)} °C
         </div>
       </div>
       <div className="precipitation">

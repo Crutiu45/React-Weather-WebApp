@@ -24,3 +24,5 @@ const user = {
   active: true
 };
 Explanantion: this is object literal as indicated by the '{}' after the name, inside it are key1: value1, key2: value2...;
+
+console.log(...) is used to understand the properties of the thing encolosed in the brackets, can be accessed on the web through the inspect--->console;
