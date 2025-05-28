@@ -1,8 +1,13 @@
-<b> is for boldness
-<i> is for icon
-'...-btn'; btn here is button
-index.js: " "current": " part in currentWeather json file
-index.js: export a func allows it to be used in other files or modules
+<b> is for boldness;
+
+<i> is for icon;
+
+'...-btn'; btn here is button;
+
+index.js: " "current": " part in currentWeather json file;
+
+index.js: export a func allows it to be used in other files or modules;
+
 CurrentWeather.js: 
   const data = getCurrentWeather();
     const {
@@ -10,4 +15,12 @@ CurrentWeather.js:
     } = data; 
     Explanantion -----> pulls certain properties into their own variables from the data object
 "." -----> the file you want is in the folder you are currently in
-".." ----> same thing as the last one except this time that 'folder' is in another upper folder where the desired file is
+".." ----> same thing as the last one except this time that 'folder' is in another upper folder where the desired file is;
+
+object literal: 
+const user = {
+  name: "you",
+  age: your age,
+  active: true
+};
+Explanantion: this is object literal as indicated by the '{}' after the name, inside it are key1: value1, key2: value2...;

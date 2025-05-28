@@ -1,5 +1,6 @@
 import { useContext } from 'react';
 import { getCurrentWeather } from "../api";
+import WeatherIcon from './WeatherIcon';
 import '../styles/components/CurrentWeather.scss';
 
 
@@ -69,10 +70,7 @@ function CurrentWeather() {
       <div className="temperature">
         <div className="weather-icon">
           <div className='weather-icon'>
-            <img
-              src={`${process.env.PUBLIC_URL}/dist/weather_icons/weather_icons/set01/big/${icon_num}.png`}
-              alt={summary}
-            />
+            <WeatherIcon iconNumber={icon_num} summary={summary}/>
           </div>
         </div>
         <div className="value">
