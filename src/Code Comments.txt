@@ -1,28 +1,43 @@
-<b> is for boldness;
+• <b> is for boldness;
 
-<i> is for icon;
+• <i> is for icon;
 
-'...-btn'; btn here is button;
+• '...-btn'; btn here is button;
 
-index.js: " "current": " part in currentWeather json file;
+• index.js: " "current": " part in currentWeather json file;
 
-index.js: export a func allows it to be used in other files or modules;
+• index.js: export a func allows it to be used in other files or modules;
 
-CurrentWeather.js: 
-  const data = getCurrentWeather();
-    const {
-      cloud_cover, feels_like, humidity, icon_num, precipitation, summary, temperature, uv_index, visibility, wind,
-    } = data; 
-    Explanantion -----> pulls certain properties into their own variables from the data object
-"." -----> the file you want is in the folder you are currently in
-".." ----> same thing as the last one except this time that 'folder' is in another upper folder where the desired file is;
+• CurrentWeather.js: 
+    const data = getCurrentWeather();
+      const {
+        cloud_cover, feels_like, humidity, icon_num, precipitation, summary, temperature, uv_index, visibility, wind,
+      } = data; 
+      Explanantion -----> pulls certain properties into their own variables from the data object
+  "." -----> the file you want is in the folder you are currently in
+  ".." ----> same thing as the last one except this time that 'folder' is in another upper folder where the desired file is;
 
-object literal: 
-const user = {
-  name: "you",
-  age: your age,
-  active: true
-};
-Explanantion: this is object literal as indicated by the '{}' after the name, inside it are key1: value1, key2: value2...;
+• object literal: 
+    const user = {
+      name: "you",
+      age: your age,
+      active: true
+    };
+    Explanantion: this is object literal as indicated by the '{}' after the name, inside it are key1: value1, key2: value2...;
 
-console.log(...) is used to understand the properties of the thing encolosed in the brackets, can be accessed on the web through the inspect--->console;
+• console.log(...) is used to understand the properties of the thing encolosed in the brackets, can be accessed on the web through the inspect--->console;
+
+• theme.context.js: 
+    in function ThemeProvider ---> const savedTheme is when we saved our theme and const isSystemThemeDark is for if we didnt save a theme i.e. when a user enters the website for the first time;
+    const [dark, setDark] = useState(true); //dark is initially set to true cuz true is in 'useState' and 'setDark' sets 'dark' to true or false effectively changing the theme
+
+• src/styles/index.js:  
+     <ThemeProvider>
+      <App />
+    </ThemeProvider>
+    Explanantion: every component in App can access the values the ThemeProvider provides i.e. dark, setDark, saveToLocalStorage; these are the return values of the function
+
+• //this is an arrow fuction designed to concisely define functions in JS
+  const toggleTheme = () => {
+
+  }
