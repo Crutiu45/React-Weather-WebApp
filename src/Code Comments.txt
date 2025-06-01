@@ -41,3 +41,21 @@
   const toggleTheme = () => {
 
   }
+
+• Weather.Context.js:
+    import { Children, createContext }  from "react";
+
+
+    const weatherContext = createContext();
+
+    function weatherProvider(children){
+
+
+        return <weatherContext.Provider value={{stuff}}>
+            {children}
+        </weatherContext.Provider>
+    } 
+    Explanantion: createContext creates a context object that includes a Provider which makes its data/value accessible to all children of it like inheritance from OOP
+    while useContext(Context object) allows the component it's called in to access the data/value of the nearest matching Context.Provider 
+    well place is the actual value and setPlace is the func that changes the state of the value
+
