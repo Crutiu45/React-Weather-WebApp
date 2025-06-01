@@ -59,3 +59,14 @@
     while useContext(Context object) allows the component it's called in to access the data/value of the nearest matching Context.Provider 
     well place is the actual value and setPlace is the func that changes the state of the value
 
+•Settings.js & index.js: 
+  Object.values(MEASUREMENT_SYSTEMS); 
+  export const MEASUREMENT_SYSTEMS = {
+    AUTO: 'auto',
+    METRIC: 'metric',
+    UK: 'uk',
+    US: 'us',
+    CA: 'ca',
+  };
+  Explanantion: MEASUREMENT_SYSTEMS here is an object and the values inside it are k:v pairs; object.values returns an array of the values that obj holds and for keys its the same syntax
+

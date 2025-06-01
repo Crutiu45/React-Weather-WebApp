@@ -8,4 +8,12 @@ export const DEFAULT_PLACE = {
     lon:"114.08529W",
     timezone:"America/Edmonton",
     type:"settlement",
-}
+};
+
+export const MEASUREMENT_SYSTEMS = {
+    AUTO: 'auto',
+    METRIC: 'metric',
+    UK: 'uk',
+    US: 'us',
+    CA: 'ca',
+};

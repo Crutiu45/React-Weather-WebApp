@@ -1,11 +1,18 @@
 import { useContext, useState } from 'react';
 import '../styles/components/Settings.scss';
-import WeatherContext from "../context/theme.context"
+import WeatherContext from "../context/Weather.context"
 import ThemeContext from '../context/theme.context';
+import { MEASUREMENT_SYSTEMS } from '../constants';
 
 function Settings() {
   const [openSettings, setOpenSettings] = useState(false);
   const {dark, setDark, saveThemeToLocalStorage} = useContext(ThemeContext);
+  const {measurementSystem, setMeasurementSystem} = useContext(WeatherContext);
+
+  const changeMeasurementSystem = (system) => {
+    setMeasurementSystem(system);
+    setOpenSettings(false);
+  };
 
   const toggleTheme = () => {
     setDark((prevDark) => !prevDark);
@@ -30,7 +37,20 @@ function Settings() {
       <div className= {`settings-menu ${openSettings ? "open" : ''}`}>
         <div className='measurement-systems'>
           <h4>Measurement Systems:</h4>
-          <div className='systems'></div>
+          <div className='systems'>
+            {
+              Object.values(MEASUREMENT_SYSTEMS).map(system =>
+                <div 
+                  className={`system ${system === measurementSystem ? 'active': ''
+                  }`} 
+                  key={system}
+                  onClick={() => changeMeasurementSystem(system)}
+                >
+                  {system}
+                </div>
+              )
+            }
+          </div>
         </div>
       </div>
     </div>
