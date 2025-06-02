@@ -7,13 +7,14 @@ function HourlyForecastWidget({data}) {
   const {units} = useContext(WeatherContext);
 
   //date format
+  const locale = navigator.language
   const now_date = {
-    day: new Intl.DateTimeFormat(navigator.language, {
+    day: new Intl.DateTimeFormat(locale, {
       weekday: "short",
       day: "2-digit",
       month: "2-digit"
     }).format(new Date()),
-    time: new Intl.DateTimeFormat(navigator.language, {
+    time: new Intl.DateTimeFormat(locale, {
       hour: "2-digit",
       minute: "2-digit",
       hour12: false
@@ -21,19 +22,30 @@ function HourlyForecastWidget({data}) {
   };
 
   const weather_date = {
-    day: new Intl.DateTimeFormat(navigator.language, {
+    day: new Intl.DateTimeFormat(locale, {
       weekday: "short",
       day: "2-digit",
       month: "2-digit"
     }).format(new Date(date)),
-    time: new Intl.DateTimeFormat(navigator.language, {
+    time: new Intl.DateTimeFormat(locale, {
       hour: "2-digit",
       minute: "2-digit",
       hour12: false
     }).format(new Date(date).setMinutes(0)),
   };
 
-  weather_date.day = weather_date.day === now_date.day && weather_date.time === now_date.time ? "Now" : weather_date.time === "00:00" ? weather_date.day: '';
+  const midnightTime = new Intl.DateTimeFormat(locale, {
+      hour: "2-digit",
+      minute: "2-digit",
+      hour12: false
+    }).format(new Date().setHours(0, 0, 0, 0))
+
+  weather_date.day = 
+    weather_date.day === now_date.day && 
+    weather_date.time === now_date.time 
+    ? "Now" : weather_date.time === midnightTime 
+    ? weather_date.day 
+    : '';
 
   return (
     <div className="widget">
