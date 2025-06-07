@@ -4,7 +4,7 @@ Welcome to the ReactJS Weather App project! This application was developed as pa
 
 Huge credit to [Code Explained] for creating the original starter template and an excellent, easy-to-follow tutorial.
 
-This project is a completed version based on that template, with several improvements and enhancements made by me :)
+This project is a completed version based of that template, with several improvements and enhancements made by me :)
 
 Check out the full tutorial on YouTube: [ReactJS Weather App Tutorial](https://www.youtube.com/watch?v=123456).
 
