@@ -40,12 +40,13 @@ function HourlyForecastWidget({data}) {
       hour12: false
     }).format(new Date().setHours(0, 0, 0, 0))
 
-  weather_date.day = 
-    weather_date.day === now_date.day && 
-    weather_date.time === now_date.time 
-    ? "Now" : weather_date.time === midnightTime 
-    ? weather_date.day 
-    : '';
+   weather_date.day =
+    weather_date.day === now_date.day &&
+    weather_date.time === now_date.time
+      ? 'Now'
+      : weather_date.time === midnightTime
+      ? weather_date.day
+      : '';
 
   return (
     <div className="widget">

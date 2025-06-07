@@ -1,6 +1,6 @@
 # ReactJS Weather App
 
-Welcome to the ReactJS Weather App project! This application was built as part of a tutorial on my YouTube channel, [Code Explained](https://www.youtube.com/@CodeExplained). In this project, we will create a weather app using ReactJS and the Meteosource Weather API.
+Welcome to the ReactJS Weather App project! This application was built as part of a tutorial on this YouTube channel, [Code Explained](https://www.youtube.com/@CodeExplained). In this project, we will create a weather app using ReactJS and the Meteosource Weather API.
 
 Check out the full tutorial on YouTube: [ReactJS Weather App Tutorial](https://www.youtube.com/watch?v=123456).
 
@@ -14,8 +14,9 @@ Check out the full tutorial on YouTube: [ReactJS Weather App Tutorial](https://w
 - [Usage](#usage)
 - [Dependencies](#dependencies)
 - [API Reference](#api-reference)
-- [Contributing](#contributing)
+- [Contributing to original template](#contributing-to-original-template)
 - [License](#license)
+- [Improvements from original template](#improvements-from-the-original-template)
 
 ## Overview
 
@@ -79,7 +80,7 @@ This project uses the following dependencies:
 
 This project uses the Meteosource Weather API to fetch weather data. You can find more information and sign up for an API key at the [Meteosource Weather API page](https://rapidapi.com/MeteosourceWeather/api/ai-weather-by-meteosource).
 
-## Contributing
+## Contributing to original template
 
 Contributions are welcome! Please feel free to submit a Pull Request.
 
@@ -96,3 +97,13 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 ---
 
 Happy coding! If you have any questions, feel free to reach out or leave a comment on the [YouTube tutorial](https://www.youtube.com/watch?v=123456).
+
+## Improvements from the original template
+
+1. The Search history bar should be clearable
+2. Background Changes Based on Weather: Change the background image/color depending on the weather (sunny, rainy, snowy).
+3. Air Quality Index (AQI): Integrate AQI data to inform users about pollution levels.
+4. UV Index & Sunrise/Sunset Times: Provide additional useful weather data.
+5. Error Handling: Handle errors gracefully (e.g., invalid location, API errors).
+6. Compare Weather Between Two Cities: Show side-by-side data for comparison.
+
