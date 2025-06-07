@@ -103,7 +103,7 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 Happy coding! If you have any questions, feel free to reach out or leave a comment on the [YouTube tutorial](https://www.youtube.com/watch?v=123456).
 
 ## Improvements from the original template
-----> Still in Progress
+----> STILL IN PROGRESS
 1. The Search history bar should be clearable
 2. Background Changes Based on Weather: Change the background image/color depending on the weather (sunny, rainy, snowy).
 3. Air Quality Index (AQI): Integrate AQI data to inform users about pollution levels.
