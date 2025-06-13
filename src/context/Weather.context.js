@@ -17,7 +17,17 @@ function WeatherProvider({ children }) {
   const [measurementSystem, setMeasurementSystem] = useState(
     MEASUREMENT_SYSTEMS.AUTO
   );
+
   const [units, setUnits] = useState({});
+
+  const [recentSearches, setRecentSearches] = useState(() => {
+  const saved = localStorage.getItem('recentSearches');
+  return saved ? JSON.parse(saved) : [];
+});
+
+  useEffect(() => {
+    localStorage.setItem('recentSearches', JSON.stringify(recentSearches));
+  }, [recentSearches]);
 
   useEffect(() => {
     async function _getWeatherData() {
@@ -62,6 +72,8 @@ function WeatherProvider({ children }) {
         measurementSystem,
         setMeasurementSystem,
         units,
+        recentSearches,
+        setRecentSearches,
       }}
     >
       {children}
