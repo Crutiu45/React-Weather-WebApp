@@ -104,10 +104,11 @@ Happy coding! If you have any questions, feel free to reach out or leave a comme
 
 ## Improvements from the original template
 ----> STILL IN PROGRESS
-1. The Search history bar should be clearable
+1. The Search bar: The search bar now contains a 'Recent Searches' bar that displays all the user's recent searches; it has a 'clear all' bar to remove all recent searches as well as an icon to remove individual searches
+
 2. Background Changes Based on Weather: Change the background image/color depending on the weather (sunny, rainy, snowy).
-3. Air Quality Index (AQI): Integrate AQI data to inform users about pollution levels.
-4. UV Index & Sunrise/Sunset Times: Provide additional useful weather data.
-5. Error Handling: Handle errors gracefully (e.g., invalid location, API errors).
-6. Compare Weather Between Two Cities: Show side-by-side data for comparison.
+
+3. Sunrise/Sunset Times: Provide additional useful weather data.
+
+4. Error Handling: Handle errors gracefully (e.g., invalid location, API errors).
 
