@@ -11,8 +11,17 @@ function Search() {
   } = useContext(WeatherContext);
 
   const [text, setText] = useState('');
+  const [inputFocused, setInputFocused] = useState(false);
   const [searchResults, setSearchResults] = useState([]);
   const [openSearchResults, setOpenSearchResults] = useState(false);
+
+  const clearAllRecentSearches = () => {
+    setRecentSearches([]);
+  };
+
+  const removeRecentSearch = (placeId) => {
+    setRecentSearches(prev => prev.filter(item => item.place_id !== placeId));
+  };
 
   async function onSearch(e) {
     const value = e.target.value;
@@ -55,11 +64,13 @@ function Search() {
           placeholder="Search city ..."
           value={text}
           onChange={onSearch}
+          onFocus={() => setInputFocused(true)}
+          onBlur={() => setTimeout(() => setInputFocused(false), 200)} // delay to allow clicks
         />
       </div>
 
       {/* Search Results Dropdown */}
-      {openSearchResults && (
+      {openSearchResults && text.trim() !== '' && (
         <div className="search-results">
           <div className="results-container">
             {searchResults.map((place) => (
@@ -76,26 +87,28 @@ function Search() {
       )}
 
       {/* Recent Searches */}
-      {recentSearches.length > 0 && (
+      {inputFocused && text.trim() === '' && recentSearches.length > 0 && (
         <div className="recent-searches">
           <div className="recent-header">
             <span>Recent Searches</span>
-            <button
-              className="clear-all"
-              onClick={() => setRecentSearches([])}
-            >
+            <button className="clear-all" onClick={clearAllRecentSearches}>
               Clear All
             </button>
           </div>
           <div className="recent-list">
-            {recentSearches.map((place) => (
-              <div className="recent-item" key={place.place_id}>
-                <span onClick={() => changePlace(place)}>
-                  {place.name}, {place.adm_area1}, {place.country}
-                </span>
+            {recentSearches.map((item) => (
+              <div
+                key={item.place_id}
+                className="recent-item"
+                onClick={() => changePlace(item)}
+              >
+                <span>{item.name}, {item.adm_area1}, {item.country}</span>
                 <button
                   className="delete-recent"
-                  onClick={() => deleteRecent(place.place_id)}
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    removeRecentSearch(item.place_id);
+                  }}
                 >
                   &times;
                 </button>

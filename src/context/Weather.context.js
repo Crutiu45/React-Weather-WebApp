@@ -21,9 +21,14 @@ function WeatherProvider({ children }) {
   const [units, setUnits] = useState({});
 
   const [recentSearches, setRecentSearches] = useState(() => {
-  const saved = localStorage.getItem('recentSearches');
-  return saved ? JSON.parse(saved) : [];
+    const saved = localStorage.getItem('recentSearches');
+    return saved ? JSON.parse(saved) : [];
 });
+
+  useEffect(() => {
+  const storedSearches = JSON.parse(localStorage.getItem('recentSearches') || '[]');
+  setRecentSearches(storedSearches);
+}, []);
 
   useEffect(() => {
     localStorage.setItem('recentSearches', JSON.stringify(recentSearches));

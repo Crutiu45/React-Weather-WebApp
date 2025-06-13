@@ -62,7 +62,7 @@
   position: absolute;
   z-index: 1;
   top: calc($header-height + 0.25rem);
-  width: 50%;
+  width: 100%;
   max-height: 50vh;
   overflow-x: hidden;
 
@@ -80,59 +80,56 @@
 }
 
 .recent-searches {
-  margin-top: 0.5rem;
+  position: absolute;
+  z-index: 1;
+  top: 100%;
+  left: 0;
   width: 100%;
+  background-color: var(--header-bg-color);
+  border-radius: 0.5rem;
+  margin-top: 0.25rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+  // 👇 Control the height and make it scrollable
+  max-height: 200px; // or whatever height you prefer
+  overflow-y: auto;
 
   .recent-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 0.5rem 1rem;
     font-weight: bold;
-    font-size: 1rem;
-    color: var(--primary-text-color);
-    padding: 0.5rem 0;
-  }
 
-  .clear-all {
-    background: none;
-    border: none;
-    font-size: 0.85rem;
-    color: red;
-    cursor: pointer;
+    .clear-all {
+      background: none;
+      border: none;
+      color: red;
+      cursor: pointer;
+      font-size: 0.9rem;
 
-    &:hover {
-      text-decoration: underline;
+      &:hover {
+        text-decoration: underline;
+      }
     }
   }
 
   .recent-list {
-    display: flex;
-    flex-direction: column;
-    gap: 0.25rem;
-
     .recent-item {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 0.5rem;
-      border-radius: 0.3rem;
-      background-color: var(--header-bg-color);
-      color: var(--primary-text-color);
-      font-size: 0.95rem;
+      padding: 0.75rem 1rem;
       cursor: pointer;
 
       &:hover {
         background-color: var(--border-color);
       }
 
-      span {
-        flex-grow: 1;
-      }
-
       .delete-recent {
         background: none;
         border: none;
-        font-size: 1.1rem;
+        font-size: 1rem;
         color: var(--secondary-text-color);
         cursor: pointer;
 
@@ -143,3 +140,5 @@
     }
   }
 }
+
+
