@@ -1,6 +1,10 @@
 # ReactJS Weather App
 
-Welcome to the ReactJS Weather App project! This application was built as part of a tutorial on this YouTube channel, [Code Explained](https://www.youtube.com/@CodeExplained). In this project, we will create a weather app using ReactJS and the Meteosource Weather API.
+Welcome to the ReactJS Weather App project! This application was developed as part of a tutorial on the YouTube channel [Code Explained](https://www.youtube.com/@CodeExplained). In this project, we will create a weather app using ReactJS and the Meteosource Weather API.
+
+Huge credit to [Code Explained] for creating the original starter template and an excellent, easy-to-follow tutorial.
+
+This project is a completed version of that template, with several improvements and enhancements made by me :)
 
 Check out the full tutorial on YouTube: [ReactJS Weather App Tutorial](https://www.youtube.com/watch?v=123456).
 
@@ -16,7 +20,7 @@ Check out the full tutorial on YouTube: [ReactJS Weather App Tutorial](https://w
 - [API Reference](#api-reference)
 - [Contributing to original template](#contributing-to-original-template)
 - [License](#license)
-- [Improvements from original template](#improvements-from-the-original-template)
+- [Improvements from original template](#improvements-from-the-original-template) ---> STILL IN PROGRESS
 
 ## Overview
 
@@ -99,7 +103,7 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 Happy coding! If you have any questions, feel free to reach out or leave a comment on the [YouTube tutorial](https://www.youtube.com/watch?v=123456).
 
 ## Improvements from the original template
-
+----> STILL IN PROGRESS
 1. The Search history bar should be clearable
 2. Background Changes Based on Weather: Change the background image/color depending on the weather (sunny, rainy, snowy).
 3. Air Quality Index (AQI): Integrate AQI data to inform users about pollution levels.
