@@ -110,5 +110,5 @@ Happy coding! If you have any questions, feel free to reach out or leave a comme
 
 3. Sunrise/Sunset Times: Provide additional useful weather data.
 
-4. Error Handling: Handle errors gracefully (e.g., invalid location, API errors).
+4. Error Handling: Handle errors gracefully (e.g., invalid location, API errors, exceeded API call limit).
 

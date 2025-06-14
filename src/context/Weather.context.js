@@ -14,6 +14,7 @@ function WeatherProvider({ children }) {
   const [currentWeather, setCurrentWeather] = useState({});
   const [hourlyForecast, setHourlyForecast] = useState([]);
   const [dailyForecast, setDailyForecast] = useState([]);
+
   const [measurementSystem, setMeasurementSystem] = useState(
     MEASUREMENT_SYSTEMS.AUTO
   );
@@ -22,52 +23,57 @@ function WeatherProvider({ children }) {
 
   const [recentSearches, setRecentSearches] = useState(() => {
     const saved = localStorage.getItem('recentSearches');
-    return saved ? JSON.parse(saved) : [];
-});
+    return saved ? JSON.parse(saved) : []; 
+  });
 
   useEffect(() => {
-  const storedSearches = JSON.parse(localStorage.getItem('recentSearches') || '[]');
-  setRecentSearches(storedSearches);
-}, []);
-
-  useEffect(() => {
-    localStorage.setItem('recentSearches', JSON.stringify(recentSearches));
+    localStorage.setItem('recentSearches', JSON.stringify(recentSearches)); 
   }, [recentSearches]);
 
   useEffect(() => {
     async function _getWeatherData() {
       setLoading(true);
+      try {
+        // Currently
+        const cw = await getWeatherData(
+          'current',
+          place.place_id,
+          measurementSystem
+        );
+        setCurrentWeather(cw.current);
+        setUnits(UNITS[cw.units]);
 
-      const cw = await getWeatherData(
-        'current',
-        place.place_id,
-        measurementSystem
-      );
-      setCurrentWeather(cw.current);
-      setUnits(UNITS[cw.units]);
+        // Hourly
+        const hf = await getWeatherData(
+          'hourly',
+          place.place_id,
+          measurementSystem
+        );
+        hf.hourly.data = hf.hourly.data;
 
-      const hf = await getWeatherData(
-        'hourly',
-        place.place_id,
-        measurementSystem
-      );
-      setHourlyForecast(hf.hourly.data);
+        setHourlyForecast(hf.hourly.data);
 
-      const df = await getWeatherData(
-        'daily',
-        place.place_id,
-        measurementSystem
-      );
-      setDailyForecast(df.daily.data);
+        // Daily
+        const df = await getWeatherData(
+          'daily',
+          place.place_id,
+          measurementSystem
+        );
+        df.daily.data = df.daily.data;
 
-      setLoading(false);
+        setDailyForecast(df.daily.data);
+      } catch (error) {
+        console.error(error);
+      } finally {
+        setLoading(false);
+      }
     }
     _getWeatherData();
   }, [place, measurementSystem]);
 
   return (
     <WeatherContext.Provider
-      value={{
+      value={{ 
         place,
         setPlace,
         loading,
@@ -79,8 +85,7 @@ function WeatherProvider({ children }) {
         units,
         recentSearches,
         setRecentSearches,
-      }}
-    >
+      }}>
       {children}
     </WeatherContext.Provider>
   );
