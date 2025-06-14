@@ -1,0 +1,51 @@
+@use '../variables/variables' as *;
+
+.Astronomy {
+  margin-top: 2rem;
+  @include no-text-select;
+
+  .widget-container {
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    margin-top: 0.5rem;
+    padding-top: 1.5rem;
+
+    .widget {
+      position: relative;
+      cursor: pointer;
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      padding: 0.75rem;
+      margin-right: 0.75rem;
+
+      // Fixed dimensions for uniform widgets
+      width: 350px;
+      height: 350px;
+
+      border: 1px solid var(--secondary-text-color);
+      border-radius: 1rem;
+
+      .day {
+        position: absolute;
+        top: -1.5rem;
+      }
+
+      .icon {
+        margin-bottom: 0.75rem;
+
+        img {
+          width: 40px;
+          margin-bottom: 0.5rem;
+        }
+      }
+
+      .time {
+        font-size: 1.1rem;
+      }
+    }
+  }
+}

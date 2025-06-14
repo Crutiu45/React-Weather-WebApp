@@ -14,7 +14,7 @@ function WeatherProvider({ children }) {
   const [currentWeather, setCurrentWeather] = useState({});
   const [hourlyForecast, setHourlyForecast] = useState([]);
   const [dailyForecast, setDailyForecast] = useState([]);
-
+  const [astronomy, setAstronomy] = useState({});  
   const [measurementSystem, setMeasurementSystem] = useState(
     MEASUREMENT_SYSTEMS.AUTO
   );
@@ -49,8 +49,6 @@ function WeatherProvider({ children }) {
           place.place_id,
           measurementSystem
         );
-        hf.hourly.data = hf.hourly.data;
-
         setHourlyForecast(hf.hourly.data);
 
         // Daily
@@ -59,9 +57,11 @@ function WeatherProvider({ children }) {
           place.place_id,
           measurementSystem
         );
-        df.daily.data = df.daily.data;
-
         setDailyForecast(df.daily.data);
+
+        // Astronomy
+        const astro = await getWeatherData('astro', place.place_id);
+        setAstronomy(astro);
       } catch (error) {
         console.error(error);
       } finally {
@@ -80,6 +80,7 @@ function WeatherProvider({ children }) {
         currentWeather,
         hourlyForecast,
         dailyForecast,
+        astronomy,
         measurementSystem,
         setMeasurementSystem,
         units,

@@ -109,6 +109,3 @@ Happy coding! If you have any questions, feel free to reach out or leave a comme
 2. Background Changes Based on Weather: Change the background image/color depending on the weather (sunny, rainy, snowy).
 
 3. Sunrise/Sunset Times: Provide additional useful weather data.
-
-4. Error Handling: Handle errors gracefully (e.g., invalid location, API errors, exceeded API call limit).
-
