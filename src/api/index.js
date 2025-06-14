@@ -21,6 +21,9 @@ export async function getWeatherData(endpoint, place_id, measurementSystem)
         return response.data;
     } catch (error) {
         console.error(error);
+        console.log('Status code:', error.response?.status);
+        console.log('Headers:', error.response?.headers);
+        console.log('Body:', error.response?.data);
     }
 }
 
@@ -43,5 +46,8 @@ export async function searchPlaces(text){
             return response.data;
         } catch (error) {
             console.error(error);
+            console.log('Status code:', error.response?.status);
+            console.log('Headers:', error.response?.headers);
+            console.log('Body:', error.response?.data);
     }
 }
