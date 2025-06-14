@@ -108,4 +108,4 @@ Happy coding! If you have any questions, feel free to reach out or leave a comme
 
 2. Background Changes Based on Weather: Change the background image/color depending on the weather (sunny, rainy, snowy).
 
-3. Sunrise/Sunset Times: Provide additional useful weather data.
+3. Added a new Astronomy widget that displays the sunrise, sunset, moonrise, and moonset for each day in the 21-day forecast.
