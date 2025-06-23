@@ -56,3 +56,26 @@ export const UNITS = {
     cloud_cover: '%',
   },
 };
+
+export const getMoonPhaseIcon = (phase) => {
+  switch (phase) {
+    case "new_moon":
+      return "bi-moon-fill"; // 🌑
+    case "waxing_crescent":
+      return "bi-moon"; // 🌒
+    case "first_quarter":
+      return "bi-moon"; // You can substitute with bi-moon
+    case "waxing_gibbous":
+      return "bi-moon"; // 🌔
+    case "full_moon":
+      return "bi-moon-stars-fill"; // 🌕
+    case "waning_gibbous":
+      return "bi-moon"; // 🌖
+    case "last_quarter":
+      return "bi-moon"; // Last quarter approximation
+    case "waning_crescent":
+      return "bi-moon"; // 🌘
+    default:
+      return "bi-moon";
+  }
+};

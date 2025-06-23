@@ -2,6 +2,7 @@ import { useContext } from "react";
 import WeatherContext from "../context/Weather.context";
 import "../styles/components/Astronomy.scss";
 import HorizontallyScrollable from "./HorizontallyScrollable";
+import { getMoonPhaseIcon } from "../constants"
 
 function Astronomy() {
   const { astronomy } = useContext(WeatherContext);
@@ -37,16 +38,19 @@ function Astronomy() {
               </div>
 
               <div className="icon">
-                {/* Optional icon representation for phases, etc.*/}
-                <img src="your-phase-icon.png" alt="moon-phase" />
+                <i className={`bi ${getMoonPhaseIcon(item.moon.phase)}`} title={item.moon.phase}></i>
+                <div className="phase-label">{item.moon.phase.replace(/_/g, ' ')}</div>
               </div>
 
+
+
               <div className="time">
-                <div>Sunrise: {new Date(item.sun.rise).toLocaleTimeString()}</div>
-                <div>Sunset: {new Date(item.sun.set).toLocaleTimeString()}</div>
-                <div>Moonrise: {new Date(item.moon.rise).toLocaleTimeString()}</div>
-                <div>Moonset: {new Date(item.moon.set).toLocaleTimeString()}</div>
+                <div><i className="bi bi-sunrise"></i> Sunrise: {new Date(item.sun.rise).toLocaleTimeString()}</div>
+                <div><i className="bi bi-sunset"></i> Sunset: {new Date(item.sun.set).toLocaleTimeString()}</div>
+                <div><i className="bi bi-moon"></i> Moonrise: {new Date(item.moon.rise).toLocaleTimeString()}</div>
+                <div><i className="bi bi-moon-stars"></i> Moonset: {new Date(item.moon.set).toLocaleTimeString()}</div>
               </div>
+
             </div>
           );
         })}
