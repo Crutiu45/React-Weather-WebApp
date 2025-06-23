@@ -20,7 +20,7 @@ Check out the full tutorial on YouTube: [ReactJS Weather App Tutorial](https://w
 - [API Reference](#api-reference)
 - [Contributing to original template](#contributing-to-original-template)
 - [License](#license)
-- [Improvements from original template](#improvements-from-the-original-template) ---> STILL IN PROGRESS
+- [Improvements from original template](#improvements-from-the-original-template) 
 
 ## Overview
 
@@ -103,9 +103,7 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 Happy coding! If you have any questions, feel free to reach out or leave a comment on the [YouTube tutorial](https://www.youtube.com/watch?v=123456).
 
 ## Improvements from the original template
-----> STILL IN PROGRESS
+
 1. The Search bar: The search bar now contains a 'Recent Searches' bar that displays all the user's recent searches; it has a 'clear all' bar to remove all recent searches as well as an icon to remove individual searches
 
-2. Background Changes Based on Weather: Change the background image/color depending on the weather (sunny, rainy, snowy).
-
-3. Added a new Astronomy widget that displays the sunrise, sunset, moonrise, and moonset for each day in the 21-day forecast.
+2. Added a new Astronomy widget that displays the sunrise, sunset, moonrise, and moonset for each day in the 21-day forecast.
